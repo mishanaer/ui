@@ -1,0 +1,187 @@
+* {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	box-sizing: border-box;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+}
+
+:root {
+    .apple {
+        --side-padding: 16px;
+    }
+
+    .material {
+        --side-padding: 20px;
+    }
+}
+
+:root {
+    --tg-theme-bg-color: #FFFFFF;
+    --tg-theme-text-color: #000000;
+    --tg-theme-secondary-bg-color: #EFEFF4;
+    --tg-theme-button-color: #007AFF;
+    --tg-theme-button-text-color: #FFFFFF;
+    --tg-theme-subtitle-text-color: #8E8E93;
+    --tg-theme-destructive-text-color: #FF3B30;
+    --tg-theme-section-bg-color: #FFFFFF;
+    --tg-theme-accent-text-color: #007AFF;
+    --tg-theme-section-header-text-color: #6D6D72;
+    --tg-theme-section-separator-color: #C8C7CC;
+    --tg-theme-bottom-bar-bg-color: #F2F2F2;
+    --tg-theme-hint-color: #8E8E93;
+    --secondary-button-color: rgb(from var(--tg-theme-button-color) r g b / 0.1);
+    --text-confirm-color: #34C759;
+    --tertiary-fill-background: rgba(from #747480 r g b / 0.12);
+    --quaternary-fill-background: rgba(from #747480 r g b / 0.08);
+    --separator-non-opaque: rgb(60 60 67 / 0.36);
+    --segmented_control_active_background: #FFFFFF;
+    --button-disabled-color: #E9E8E8;
+    --text-disabled-color: #BABABA;
+    --border-color: oklch(from var(--tg-theme-hint-color) l c h / 0.5);
+    --background-material-regular-color-1: rgb(255 255 255 / 0.25);
+    --background-material-regular-color-2: rgb(255 255 255 / 0.6);
+    --background-material-regular-blend-mode-1: plus-lighter;
+    --background-material-regular-blend-mode-2: normal;
+    --toast-background: rgb(45 45 45 / 0.8);
+    --toast-text: #FFFFFF;
+    --toast-link: #5AC8FA;
+}
+
+body.material {
+    --toast-background: rgb(40 48 57 / 0.92);
+    --toast-link: #85CAFF;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --tg-theme-bg-color: #000000;
+        --tg-theme-text-color: #FFFFFF;
+        --tg-theme-secondary-bg-color: #1C1C1D;
+        --tg-theme-button-color: #3E88F7;
+        --tg-theme-button-text-color: #FFFFFF;
+        --tg-theme-subtitle-text-color: #98989E;
+        --tg-theme-destructive-text-color: #EB5545;
+        --tg-theme-section-bg-color: #2C2C2E;
+        --tg-theme-accent-text-color: #3E88F7;
+        --tg-theme-section-header-text-color: #8D8E93;
+        --tg-theme-section-separator-color: #545458;
+        --tg-theme-bottom-bar-bg-color: #1D1D1D;
+        --tg-theme-hint-color: #98989E;
+        --secondary-button-color: rgb(from var(--tg-theme-button-color) r g b / 0.1);
+        --text-confirm-color: #30D158;
+        --tertiary-fill-background: rgba(from #787880 r g b / 0.24);
+        --quaternary-fill-background: rgba(from #787880 r g b / 0.18);
+        --separator-non-opaque: rgba(84, 84, 88, 0.65);
+        --segmented_control_active_background: #636366;
+        --button-disabled-color: #3C3C3E;
+        --text-disabled-color: #606060;
+        --border-color: oklch(from var(--tg-theme-hint-color) l c h / 0.4);
+        --background-material-regular-color-1: rgba(0, 0, 0, 0.41);
+        --background-material-regular-color-2: rgba(0, 0, 0, 0);
+        --background-material-regular-blend-mode-1: normal;
+        --background-material-regular-blend-mode-2: normal;
+    }
+}
+
+:where([data-color-scheme="light"]) {
+    --tg-theme-bg-color: #FFFFFF;
+    --tg-theme-text-color: #000000;
+    --tg-theme-secondary-bg-color: #EFEFF4;
+    --tg-theme-button-color: #007AFF;
+    --tg-theme-button-text-color: #FFFFFF;
+    --tg-theme-subtitle-text-color: #8E8E93;
+    --tg-theme-destructive-text-color: #FF3B30;
+    --tg-theme-section-bg-color: #FFFFFF;
+    --tg-theme-accent-text-color: #007AFF;
+    --tg-theme-section-header-text-color: #6D6D72;
+    --tg-theme-section-separator-color: #C8C7CC;
+    --tg-theme-bottom-bar-bg-color: #F2F2F2;
+    --tg-theme-hint-color: #8E8E93;
+    --secondary-button-color: rgb(from var(--tg-theme-button-color) r g b / 0.1);
+    --text-confirm-color: #34C759;
+    --tertiary-fill-background: rgba(from #747480 r g b / 0.12);
+    --quaternary-fill-background: rgba(from #747480 r g b / 0.08);
+    --separator-non-opaque: rgb(60 60 67 / 0.36);
+    --segmented_control_active_background: #FFFFFF;
+    --button-disabled-color: #E9E8E8;
+    --text-disabled-color: #BABABA;
+    --border-color: oklch(from var(--tg-theme-hint-color) l c h / 0.5);
+    --background-material-regular-color-1: rgb(255 255 255 / 0.25);
+    --background-material-regular-color-2: rgb(255 255 255 / 0.6);
+    --background-material-regular-blend-mode-1: plus-lighter;
+    --background-material-regular-blend-mode-2: normal;
+}
+
+:where([data-color-scheme="dark"]) {
+    --tg-theme-bg-color: #000000;
+    --tg-theme-text-color: #FFFFFF;
+    --tg-theme-secondary-bg-color: #1C1C1D;
+    --tg-theme-button-color: #3E88F7;
+    --tg-theme-button-text-color: #FFFFFF;
+    --tg-theme-subtitle-text-color: #98989E;
+    --tg-theme-destructive-text-color: #EB5545;
+    --tg-theme-section-bg-color: #2C2C2E;
+    --tg-theme-accent-text-color: #3E88F7;
+    --tg-theme-section-header-text-color: #8D8E93;
+    --tg-theme-section-separator-color: #545458;
+    --tg-theme-bottom-bar-bg-color: #1D1D1D;
+    --tg-theme-hint-color: #98989E;
+    --secondary-button-color: rgb(from var(--tg-theme-button-color) r g b / 0.1);
+    --text-confirm-color: #30D158;
+    --tertiary-fill-background: rgba(from #787880 r g b / 0.24);
+    --quaternary-fill-background: rgba(from #787880 r g b / 0.18);
+    --separator-non-opaque: rgba(84, 84, 88, 0.65);
+    --segmented_control_active_background: #636366;
+    --button-disabled-color: #3C3C3E;
+    --text-disabled-color: #606060;
+    --border-color: oklch(from var(--tg-theme-hint-color) l c h / 0.4);
+    --background-material-regular-color-1: rgba(0, 0, 0, 0.41);
+    --background-material-regular-color-2: rgba(0, 0, 0, 0);
+    --background-material-regular-blend-mode-1: normal;
+    --background-material-regular-blend-mode-2: normal;
+}
+
+html, body {
+    scroll-behavior: smooth;
+}
+
+body {
+ 	margin: 0;
+	color: var(--tg-theme-text-color);
+	-webkit-font-smoothing: antialiased;
+    will-change: background-color;
+    transition: background-color 200ms ease;
+    padding-top: calc(env(safe-area-inset-top) + var(--tg-content-safe-area-inset-top));
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+
+    &.apple {
+        font-family: -apple-system, system-ui, sans-serif;
+    }
+
+    &.material {
+        font-family: "Roboto Flex", Roboto, system-ui, sans-serif;
+    }
+
+    &.skin-switcher-active {
+        /* Clearance from the viewport bottom to just above the floating
+           SkinSwitcher. Bottom-anchored UI reads it via
+           var(--bottom-clearance, <own baseline>), so it replaces the baseline
+           only while the switcher is mounted (the var is otherwise unset). */
+        --bottom-clearance: calc(env(safe-area-inset-bottom, 0px) + 72px);
+    }
+}
+
+body::-webkit-scrollbar, html::-webkit-scrollbar {
+    display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

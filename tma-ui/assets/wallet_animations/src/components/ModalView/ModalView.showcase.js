@@ -1,0 +1,40 @@
+import { Suspense, lazy } from "react"
+
+import Page from "../Page"
+import SectionList from "../SectionList"
+import Cell from "../Cells"
+
+import useModal from "../../hooks/useModal"
+const Modals = lazy(() => import("./Modals"))
+
+import { BackButton } from "../../lib/twa"
+
+const ModalPages = () => {
+    const { modals, handlers } = useModal({
+        modal1: false,
+        modal2: false,
+    })
+
+    return (
+        <>
+            <Page>
+                <BackButton />
+                <SectionList>
+                    <SectionList.Item>
+                        <Cell onClick={handlers.modal1.open}>
+                            <Cell.Text type="Accent" title="Open Modal" />
+                        </Cell>
+                        <Cell onClick={handlers.modal2.open}>
+                            <Cell.Text type="Accent" title="Open Modal (CSS)" />
+                        </Cell>
+                    </SectionList.Item>
+                </SectionList>
+            </Page>
+            <Suspense>
+                <Modals modals={modals} handlers={handlers} />
+            </Suspense>
+        </>
+    )
+}
+
+export default ModalPages

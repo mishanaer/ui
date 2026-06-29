@@ -1,0 +1,48 @@
+import { useState } from "react"
+
+import { RegularButton } from "../../../components/Button"
+
+import WebApp, { BackButton } from "../../../lib/twa"
+
+import * as styles from "./ColorChanging.module.scss"
+
+function ColorChanging() {
+    const [isSecondaryColor, setIsSecondaryColor] = useState(true)
+
+    const switchColors = () => {
+        if (WebApp.initData) {
+            if (isSecondaryColor) {
+                WebApp.setHeaderColor("#131314")
+                WebApp.setBackgroundColor("#131314")
+            } else {
+                WebApp.setHeaderColor("secondary_bg_color")
+                WebApp.setBackgroundColor("secondary_bg_color")
+            }
+            setIsSecondaryColor((prev) => !prev)
+            WebApp.HapticFeedback.impactOccurred("light")
+        } else {
+            if (isSecondaryColor) {
+                document.body.style.backgroundColor = "#131314"
+            } else {
+                document.body.style.backgroundColor =
+                    "var(--tg-theme-secondary-bg-color)"
+            }
+            setIsSecondaryColor((prev) => !prev)
+        }
+    }
+
+    return (
+        <>
+            <BackButton />
+            <div className={styles.root}>
+                <RegularButton
+                    variant="filled"
+                    label="Change Color"
+                    onClick={switchColors}
+                />
+            </div>
+        </>
+    )
+}
+
+export default ColorChanging

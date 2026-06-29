@@ -1,0 +1,132 @@
+// Базовые стили карточки
+.card {
+    z-index: 1;
+}
+
+.data {
+    position: relative;
+    display: flex;
+    padding: 28px 0 44px;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    align-self: stretch;
+    text-align: center;
+    z-index: 1;
+}
+
+.amount span {
+    font-size: 48px;
+    font-weight: 700;
+    font-variant-numeric: lining-nums tabular-nums;
+}
+
+:global(body.apple) .amount span {
+    font-family:
+        ui-rounded,
+        -apple-system,
+        system-ui,
+        sans-serif;
+}
+
+.prefix {
+    color: var(--tg-theme-subtitle-text-color);
+}
+
+.cardOverlay .amount span {
+    color: #fff;
+}
+
+.cardDefault .amount span {
+    color: var(--tg-theme-text-color);
+}
+
+:global(body.material) .amount span {
+    font-size: 44px;
+    font-weight: 500;
+}
+
+.actions {
+    position: relative;
+    background-color: transparent !important;
+    display: flex;
+    padding: 0 16px 16px;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: stretch;
+    z-index: 1;
+}
+
+// ============================================
+// Variant: overlay (прозрачный фон, белый текст)
+// Force dark mode — переопределяем переменные для вложенных компонентов
+// ============================================
+.cardOverlay {
+    // Force dark context — все CSS переменные для вложенных компонентов
+    --tg-theme-text-color: #fff;
+    --tg-theme-subtitle-text-color: rgb(255 255 255 / 55%);
+    --tg-theme-accent-text-color: #fff;
+    --tg-theme-section-bg-color: transparent;
+    --text-confirm-color: #30d158;
+
+    color: white;
+
+    .label {
+        color: rgb(255 255 255 / 55%);
+    }
+
+    .prefix {
+        color: rgb(255 255 255 / 55%);
+    }
+
+    :global(body.material) & {
+        .data {
+            padding: 92px 0 31px;
+        }
+    }
+}
+
+// ============================================
+// Variant: default (светлый фон, theme colors)
+// ============================================
+.cardDefault {
+    color: var(--tg-theme-text-color);
+    background: var(--tg-theme-section-bg-color);
+
+    .label {
+        :global(body.apple) & {
+            color: var(--tg-theme-text-color);
+        }
+
+        :global(body.material) & {
+            color: var(--tg-theme-subtitle-text-color);
+        }
+    }
+
+    :global(body.material) & {
+        background-color: var(--tg-theme-section-bg-color);
+
+        .data {
+            padding: 32px 0 42px;
+        }
+
+        .amount {
+            font-size: 44px;
+            font-weight: 500;
+        }
+    }
+}
+
+// Стиль для кнопок в overlay варианте (экспортируется отдельно для использования в actions)
+.overlayButton {
+    background:
+        linear-gradient(rgb(255 255 255 / 7%), rgb(255 255 255 / 7%)),
+        rgb(255 255 255 / 3%) !important;
+    background-blend-mode: plus-lighter, normal;
+    color: white !important;
+
+    svg,
+    path {
+        fill: white !important;
+    }
+}
