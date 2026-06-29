@@ -1,6 +1,6 @@
 # Source Components
 
-Use this reference before implementing or adapting any TMA UI component.
+Use this reference before implementing or adapting any Sber TMA component.
 
 ## Bundled Source
 

@@ -4,15 +4,15 @@ Use this reference when styling text or Apple/Material skins. For colors and the
 
 ## Font Policy
 
-- Use `SB Sans UI` from `assets/fonts/Interface` for all interface/body text on both Apple/iOS and Material/Android skins. This is the default TMA UI font.
+- Use `SB Sans UI` from `assets/fonts/Interface` for all interface/body text on both Apple/iOS and Material/Android skins. This is the default Sber TMA font.
 - Always copy the Interface font files from `assets/fonts/Interface` into the target project before wiring the app font: at minimum `SBSansUI-Regular.otf`, `SBSansUI-Semibold.otf`, and `SBSansUI-Bold.otf`.
 - Use `SB Sans Text Mono` for code, commands, IDs, timestamps, wallet addresses, hashes, and technical metrics.
 - If the user explicitly asks to change typography, offer the bundled font list below and copy only the selected family files from `assets/fonts`.
-- Do not fetch external font packages when a suitable bundled TMA UI font exists.
+- Do not fetch external font packages when a suitable bundled Sber TMA font exists.
 - Never map iOS/Apple to San Francisco or system stack, and never map Android/Material to Roboto. Platform skins may change type scale, density, weight mapping, elevation, and motion, but not the interface font family.
 - Do not use Display, Text, Condensed, Extended, Serif, system UI, Geist, Inter, Roboto, or project defaults as the main interface/body font. Keep `SB Sans UI` from `assets/fonts/Interface` as the interface font and limit other families to explicit non-interface uses.
 
-Bundled TMA UI font list:
+Bundled Sber TMA font list:
 
 | Family | Folder | Files | Best use |
 |--------|--------|-------|----------|

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Sber TMA"
+  short_description: "Sber Telegram Mini App components"
+  default_prompt: "Use $sber-tma to build a Telegram Mini App screen from bundled wallet_animations components."

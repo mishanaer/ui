@@ -1,4 +1,0 @@
-interface:
-  display_name: "TMA UI"
-  short_description: "Reusable Telegram Mini App components"
-  default_prompt: "Use $tma-ui to build a Telegram Mini App screen from bundled wallet_animations components."

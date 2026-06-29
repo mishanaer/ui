@@ -1,14 +1,14 @@
 ---
-name: tma-ui
-description: Reusable Telegram Mini Apps UI component source kit based on bundled IlyaGrshin/wallet_animations. Use when building, reviewing, or refactoring Telegram Web App / Telegram Mini App frontends and the task needs wallet-like React components, Apple/Material skins, Telegram theme variables, safe-area layouts, hash routing, native TWA buttons, bottom bars, tabs, modals, popovers, page transitions, microinteractions, or motion/react animations. This skill should reuse the bundled wallet_animations components first, then adapt them to the target project.
+name: sber-tma
+description: Reusable Sber-styled Telegram Mini Apps UI component source kit based on bundled IlyaGrshin/wallet_animations and SB Sans font assets. Use when building, reviewing, or refactoring Telegram Web App / Telegram Mini App frontends and the task needs wallet-like React components, Apple/Material skins, Telegram theme variables, safe-area layouts, hash routing, native TWA buttons, bottom bars, tabs, modals, popovers, page transitions, microinteractions, or motion/react animations. This skill should reuse the bundled wallet_animations components first, then adapt them to the target project.
 ---
 
-# TMA UI
+# Sber TMA
 
 ## Core Workflow
 
 1. Inspect the target project first: package manager lockfile, framework, router, styling system, Telegram SDK wrapper, existing primitives, and design tokens.
-2. Before writing any matching TMA UI from scratch, search the bundled source at `assets/wallet_animations/` and identify the closest component, hook, utility, style, icon, or prototype.
+2. Before writing any matching Sber TMA component from scratch, search the bundled source at `assets/wallet_animations/` and identify the closest component, hook, utility, style, icon, or prototype.
 3. Copy the upstream component source into the target project as the starting point. Preserve the component's dependent files from the bundle, then adapt imports, typing style, styling conventions, and project primitives only as needed.
 4. Prefer the target project's package manager and app shell conventions. Do not switch runners, routers, or styling systems without evidence from the project.
 5. For Telegram Mini Apps, default to SPA-safe assumptions: no SSR-only APIs during render, hash routing when inside Telegram WebView, relative asset URLs, Telegram theme variables, and safe-area insets.
@@ -18,7 +18,7 @@ description: Reusable Telegram Mini Apps UI component source kit based on bundle
 
 ## Read References
 
-- Read `references/source-components.md` before implementing or adapting any TMA UI component. This is mandatory for component work.
+- Read `references/source-components.md` before implementing or adapting any Sber TMA component. This is mandatory for component work.
 - Read `references/stack.md` before adding dependencies, routing, app shell, Telegram SDK integration, or file structure.
 - Read `references/surfaces.md` when implementing pages, native Telegram buttons, bottom bars, split view, safe areas, snackbars, modals, dropdowns, or tooltips.
 - Read `references/motion.md` when adding transitions, tabs, tab bars, sheet/menu animations, shared-layout motion, gesture response, Lottie, or view transitions.
@@ -49,6 +49,6 @@ Use PropTypes only if the project already uses PropTypes. Use TypeScript types i
 
 ## Bundled Source
 
-This skill bundles a snapshot of `IlyaGrshin/wallet_animations` under `assets/wallet_animations/`, including source components, hooks, utilities, icons, images, configs, and license. Treat that bundle as the canonical component source for TMA UI work.
+This skill bundles a snapshot of `IlyaGrshin/wallet_animations` under `assets/wallet_animations/`, including source components, hooks, utilities, icons, images, configs, and license. Treat that bundle as the canonical component source for Sber TMA work.
 
-This skill also bundles GigaKit font assets under `assets/fonts/`. Treat `assets/fonts/Interface/SB Sans UI` as the canonical TMA UI interface font, and use `references/typography.md` for the full font list and selection rules.
+This skill also bundles GigaKit font assets under `assets/fonts/`. Treat `assets/fonts/Interface/SB Sans UI` as the canonical Sber TMA interface font, and use `references/typography.md` for the full font list and selection rules.
