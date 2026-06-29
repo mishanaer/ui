@@ -1,0 +1,4 @@
+interface:
+  display_name: "TMA UI"
+  short_description: "Telegram Mini App UI motion patterns"
+  default_prompt: "Use $tma-ui to build a polished Telegram Mini App screen."
