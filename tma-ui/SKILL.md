@@ -12,7 +12,7 @@ description: Reusable Telegram Mini Apps UI component source kit based on bundle
 3. Copy the upstream component source into the target project as the starting point. Preserve the component's dependent files from the bundle, then adapt imports, typing style, styling conventions, and project primitives only as needed.
 4. Prefer the target project's package manager and app shell conventions. Do not switch runners, routers, or styling systems without evidence from the project.
 5. For Telegram Mini Apps, default to SPA-safe assumptions: no SSR-only APIs during render, hash routing when inside Telegram WebView, relative asset URLs, Telegram theme variables, and safe-area insets.
-6. Design for both platform skins: Apple gets iOS-like blur/radius/easing; Material gets Android/Telegram Desktop-like elevation, Roboto-style typography, and tighter motion.
+6. Design for both platform skins with one interface font family: Apple/iOS and Material/Android both use `SB Sans UI` from `assets/fonts/Interface`. Apple gets iOS-like blur/radius/easing; Material gets Android/Telegram Desktop-like elevation, Material density, and tighter motion.
 7. Keep motion interruptible, input-driven, reduced-motion aware, and limited to compositor-friendly properties.
 8. Verify on narrow mobile viewport and at least one wider viewport. Check text fit, safe-area spacing, hit targets, theme colors, and motion nonblankness.
 
@@ -37,6 +37,7 @@ description: Reusable Telegram Mini Apps UI component source kit based on bundle
 - Do not add global CSS unless the selector genuinely requires root scope, such as theme variables, resets, safe-area body padding, or `::view-transition-*`.
 - Do not ignore `prefers-reduced-motion`.
 - Do not hide Telegram safe-area, bottom bar, or native button state behind decorative cards. The app should feel native inside the WebView.
+- Use `SB Sans UI` from `assets/fonts/Interface` as the interface/body font for both Apple/iOS and Material/Android skins. Do not swap to San Francisco/system stack on iOS or Roboto on Android. Offer other bundled `assets/fonts` families only when the user explicitly asks to change typography or for non-interface display/editorial use.
 
 ## Implementation Bias
 
@@ -49,3 +50,5 @@ Use PropTypes only if the project already uses PropTypes. Use TypeScript types i
 ## Bundled Source
 
 This skill bundles a snapshot of `IlyaGrshin/wallet_animations` under `assets/wallet_animations/`, including source components, hooks, utilities, icons, images, configs, and license. Treat that bundle as the canonical component source for TMA UI work.
+
+This skill also bundles GigaKit font assets under `assets/fonts/`. Treat `assets/fonts/Interface/SB Sans UI` as the canonical TMA UI interface font, and use `references/typography.md` for the full font list and selection rules.
