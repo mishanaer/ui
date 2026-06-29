@@ -1,6 +1,0 @@
-.tools/
-node_modules/
-demo-react/node_modules/
-demo-react/.yarn/
-demo-react/.vite/
-demo-react/dist/
