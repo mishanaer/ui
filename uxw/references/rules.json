@@ -46,5 +46,29 @@
     "good_examples": ["Номер телефона", "Комментарий", "Поиск"],
     "exceptions": [],
     "notes": ""
+  },
+  {
+    "id": "ui.link.meaningful_text",
+    "scope": ["interface", "link"],
+    "component": "link",
+    "severity": "warning",
+    "lintable": true,
+    "rule": "Ссылка должна называть место назначения или действие.",
+    "bad_patterns": ["здесь", "тут", "по ссылке", "подробнее здесь"],
+    "good_examples": ["Подробнее о тарифе", "Открыть условия"],
+    "exceptions": [],
+    "notes": ""
+  },
+  {
+    "id": "ui.typography.percent_no_space",
+    "scope": ["interface", "typography"],
+    "component": "any",
+    "severity": "warning",
+    "lintable": true,
+    "rule": "Процент пишется без пробела.",
+    "bad_patterns": ["\\d+\\s+%"],
+    "good_examples": ["50%"],
+    "exceptions": [],
+    "notes": ""
   }
 ]
