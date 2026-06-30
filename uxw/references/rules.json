@@ -12,6 +12,18 @@
     "notes": ""
   },
   {
+    "id": "ui.tone.no_hype",
+    "scope": ["interface", "tone"],
+    "component": "any",
+    "severity": "suggestion",
+    "lintable": true,
+    "rule": "В транзакционном UI избегайте хайпа, шуток и эмоциональных вставок.",
+    "bad_patterns": ["ура", "супер", "отлично", "поздравляем"],
+    "good_examples": ["Готово", "Заявка отправлена"],
+    "exceptions": [],
+    "notes": ""
+  },
+  {
     "id": "ui.button.no_i_want",
     "scope": ["interface", "button"],
     "component": "button",
@@ -20,6 +32,18 @@
     "rule": "Кнопка обычно должна быть прямым действием пользователя.",
     "bad_patterns": ["хочу "],
     "good_examples": ["Удалить", "Открыть", "Подключить"],
+    "exceptions": [],
+    "notes": ""
+  },
+  {
+    "id": "ui.form.no_enter_write_start_typing",
+    "scope": ["interface", "form"],
+    "component": "label_or_placeholder",
+    "severity": "warning",
+    "lintable": true,
+    "rule": "Лейбл или плейсхолдер обычно называет данные, а не действие ввода.",
+    "bad_patterns": ["введите", "напишите", "начните писать"],
+    "good_examples": ["Номер телефона", "Комментарий", "Поиск"],
     "exceptions": [],
     "notes": ""
   }
