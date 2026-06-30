@@ -1,40 +1,52 @@
-# Code Review For UI Strings
+# Ревью UI-строк в коде
 
-## Before Editing
+## Перед правкой
 
-1. Find localization files and inline strings.
-2. Identify format: JSON, YAML, JS object, i18n library, ICU, markdown, HTML, or framework template.
-3. Check package manager from lockfiles before running project commands.
-4. If the string contains variables or plural forms, preserve syntax exactly.
+1. Найди locale-файлы и inline-строки.
+2. Определи формат: JSON, YAML, JS object, ICU, markdown, HTML или framework template.
+3. Проверь package manager по lockfiles перед запуском команд.
+4. Если строка содержит переменные или plural forms, сохрани синтаксис точно.
+5. Проверь, не используются ли строки в тестах, аналитике или технических идентификаторах.
 
-## Safe Edits
+## Безопасные правки
 
-- Rewrite value strings while preserving keys.
-- Fix punctuation and spacing when it cannot affect parsing.
-- Keep escaping style and quote style consistent.
-- Prefer minimal diffs in generated locale files.
+Можно делать без отдельного согласования:
 
-## Risky Edits
+- переписывать value strings, сохраняя ключи;
+- править пунктуацию и пробелы, если это не ломает парсинг;
+- сохранять escaping style и quote style;
+- делать минимальный diff в locale-файлах.
 
-Ask or leave a note before:
-- changing localization keys;
-- moving strings between components;
-- editing tests that assert copy;
-- changing legal-sensitive text;
-- changing strings that are also API enum values, analytics labels, or backend contracts.
+## Рискованные правки
 
-## Suggested Process
+Сначала спроси или оставь заметку перед тем как:
 
-Run extractor when there are many files:
+- менять localization keys;
+- переносить строки между компонентами;
+- редактировать тесты, которые проверяют текст;
+- менять юридически чувствительный текст;
+- менять ICU plural/select logic;
+- менять HTML/markdown structure вместо видимого текста.
+
+## Процесс
+
+Если файлов много, сначала извлеки строки:
 
 ```bash
 python3 uxw/scripts/extract_ui_strings.py src --format md
 ```
 
-Run linter for heuristics:
+Запусти линтер для эвристик:
 
 ```bash
 python3 uxw/scripts/ui_text_lint.py src/locales/ru.json
 ```
 
-Use linter warnings as prompts for human review. Some warnings are acceptable in legal, support, settings, and domain-specific flows.
+Считай предупреждения линтера подсказками для ревью, а не автоматической истиной.
+
+## Как оформлять diff
+
+- Меняй только UI copy, если пользователь не попросил править компоненты.
+- Сохраняй порядок ключей, когда это важно для читаемости.
+- Не меняй форматирование файла без причины.
+- Не смешивай UXW-правки с рефакторингом.
