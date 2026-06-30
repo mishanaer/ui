@@ -1,0 +1,122 @@
+[
+  {
+    "id": "ui.tone.no_apologies",
+    "scope": ["interface", "tone", "error"],
+    "component": "any",
+    "severity": "warning",
+    "lintable": true,
+    "rule": "Avoid apology-like framing in ordinary UI errors; explain what happened and what to do.",
+    "bad_patterns": ["извините", "простите", "к сожалению", "ой"],
+    "good_examples": ["Не загрузилось. Попробуйте снова"],
+    "exceptions": ["Support conversations or explicit service recovery messages may need apologies."],
+    "notes": "Semantic review required for support and legal contexts."
+  },
+  {
+    "id": "ui.tone.no_hype",
+    "scope": ["interface", "tone"],
+    "component": "any",
+    "severity": "suggestion",
+    "lintable": true,
+    "rule": "Avoid hype, jokes, and emotional filler in transactional UI.",
+    "bad_patterns": ["ура", "супер", "отлично", "поздравляем"],
+    "good_examples": ["Готово", "Заявка отправлена"],
+    "exceptions": ["Celebratory product moments may use warmer tone if the product style allows it."],
+    "notes": ""
+  },
+  {
+    "id": "ui.button.no_i_want",
+    "scope": ["interface", "button"],
+    "component": "button",
+    "severity": "warning",
+    "lintable": true,
+    "rule": "Button labels should usually be direct user actions, not 'I want' phrases.",
+    "bad_patterns": ["хочу "],
+    "good_examples": ["Удалить", "Открыть", "Подключить"],
+    "exceptions": ["A conversational assistant UI may intentionally model user phrases."],
+    "notes": ""
+  },
+  {
+    "id": "ui.button.no_system_present_tense",
+    "scope": ["interface", "button"],
+    "component": "button",
+    "severity": "warning",
+    "lintable": true,
+    "rule": "Avoid system-present-tense labels for buttons.",
+    "bad_patterns": ["сохраняю", "удаляю", "отправляю", "загружаю"],
+    "good_examples": ["Сохранить", "Удалить", "Отправить", "Загрузить"],
+    "exceptions": ["Loading state text may describe current progress outside the button label."],
+    "notes": ""
+  },
+  {
+    "id": "ui.button.no_ok",
+    "scope": ["interface", "button"],
+    "component": "button",
+    "severity": "suggestion",
+    "lintable": true,
+    "rule": "Use a meaningful Russian acknowledgement or action instead of OK when possible.",
+    "bad_patterns": ["ок", "ok"],
+    "good_examples": ["Понятно", "Хорошо", "Продолжить"],
+    "exceptions": ["Very constrained system UI may keep OK."],
+    "notes": ""
+  },
+  {
+    "id": "ui.form.no_enter_write_start_typing",
+    "scope": ["interface", "form"],
+    "component": "label_or_placeholder",
+    "severity": "warning",
+    "lintable": true,
+    "rule": "Labels and placeholders should usually name the data, not say to type it.",
+    "bad_patterns": ["введите", "напишите", "начните писать"],
+    "good_examples": ["Номер телефона", "Комментарий", "Поиск"],
+    "exceptions": ["Instructional onboarding can use imperative wording when the interaction is not obvious."],
+    "notes": ""
+  },
+  {
+    "id": "ui.link.meaningful_text",
+    "scope": ["interface", "link"],
+    "component": "link",
+    "severity": "warning",
+    "lintable": true,
+    "rule": "Link text should name the destination or action.",
+    "bad_patterns": ["здесь", "тут", "по ссылке", "подробнее здесь"],
+    "good_examples": ["Подробнее о тарифе", "Открыть условия"],
+    "exceptions": ["Long running prose outside compact UI may rely on surrounding sentence context."],
+    "notes": ""
+  },
+  {
+    "id": "ui.typography.percent_no_space",
+    "scope": ["interface", "typography"],
+    "component": "any",
+    "severity": "warning",
+    "lintable": true,
+    "rule": "Write percent without a space.",
+    "bad_patterns": ["\\d+\\s+%"],
+    "good_examples": ["50%"],
+    "exceptions": [],
+    "notes": ""
+  },
+  {
+    "id": "ui.typography.currency_nbsp",
+    "scope": ["interface", "typography"],
+    "component": "any",
+    "severity": "suggestion",
+    "lintable": true,
+    "rule": "Use non-breaking spaces between numbers, groups, and currency symbols in UI.",
+    "bad_patterns": ["\\d\\s+₽"],
+    "good_examples": ["1 000 ₽"],
+    "exceptions": ["Plain-text systems that cannot render NBSP."],
+    "notes": ""
+  },
+  {
+    "id": "ui.typography.technical_nonbreaking_hyphen",
+    "scope": ["interface", "typography"],
+    "component": "any",
+    "severity": "suggestion",
+    "lintable": true,
+    "rule": "Use non-breaking hyphen in short technical compounds that should not wrap awkwardly.",
+    "bad_patterns": ["QR-код", "ПИН-код", "СМС-код"],
+    "good_examples": ["QR‑код", "ПИН‑код", "СМС‑код"],
+    "exceptions": ["Systems that normalize punctuation or cannot render non-breaking hyphen."],
+    "notes": ""
+  }
+]
