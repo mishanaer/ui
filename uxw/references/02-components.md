@@ -1,140 +1,179 @@
-# Component Patterns
+# Компоненты
 
-## Headings
+## Заголовки
 
-Purpose: orient the user in a screen or state.
+Заголовок ориентирует пользователя на экране или в состоянии.
 
-Pattern:
-- noun phrase, short statement, or useful question;
-- no period at the end of short headings;
-- subheading may complete the heading's thought.
+Правила:
 
-Avoid:
-- vague headings: "Важно", "Информация", "Внимание";
-- decorative excitement;
-- repeating the same noun in heading and subheading.
+- короткая именная фраза, утверждение или полезный вопрос;
+- без точки в конце короткого заголовка;
+- без декоративного восторга;
+- без общих слов «Важно», «Информация», «Внимание» без конкретики;
+- заголовок и подзаголовок не должны повторять одну и ту же мысль.
 
-## Buttons
+Плохо: «Важно».
 
-Purpose: express the user's action and set an expectation.
+Лучше: «Не хватает данных».
 
-Pattern:
-- action verb: "Сохранить", "Удалить", "Продолжить";
-- state-changing action first;
-- destructive action must be explicit.
+## Кнопки
 
-Avoid:
-- "Хочу ...";
-- system present tense: "Сохраняю", "Удаляем";
-- "Я понял";
-- "ОК" when "Понятно", "Хорошо", or a concrete action is clearer;
-- long explanations inside the button.
+Кнопка — реплика пользователя. Она отвечает на вопрос «Что сделать?» и задает ожидание после нажатия.
 
-## Links
+Хорошие кнопки:
 
-Purpose: navigate to a specific object, explanation, or action.
+- «Сохранить»;
+- «Удалить»;
+- «Повторить»;
+- «Перевести»;
+- «Продолжить»;
+- «Понятно».
 
-Pattern:
-- name the destination: "Подробнее о тарифе", "Условия акции";
-- avoid "здесь", "тут", "по ссылке" as the only link text.
+Избегай:
 
-## Labels And Placeholders
+- «Хочу удалить»;
+- «Сохраняю»;
+- «Я понял»;
+- «ОК», если можно написать точнее;
+- длинного объяснения внутри кнопки.
 
-Purpose: identify what data belongs in a field.
+Для опасных действий пиши явно: «Удалить», «Да, удалить», «Точно удалить?».
 
-Pattern:
-- label: noun phrase, usually "Номер телефона", "Комментарий", "Дата рождения";
-- optional field: "Отчество, если есть";
-- placeholder: example or format hint only when it helps avoid an error.
+Для паузы или отказа используй «Отмена», «Не сейчас», «Позже», «Назад» — по контексту.
 
-Avoid:
-- "Введите", "Напишите", "Начните писать";
-- placeholder that duplicates a visible label;
-- mandatory instruction hidden only in placeholder.
+## Ссылки
 
-## Tooltips And Hints
+Ссылка должна объяснять, куда пользователь попадет или что откроет.
 
-Purpose: add secondary explanation.
+Плохо:
 
-Pattern:
-- one concise clarification;
-- no required condition hidden in tooltip;
-- put mandatory, legal, or risk information on the screen.
+- «здесь»;
+- «тут»;
+- «по ссылке»;
+- «подробнее здесь».
 
-## Alerts
+Лучше:
 
-Purpose: interrupt or update the user when something changed or needs attention.
+- «Подробнее о тарифе»;
+- «Открыть условия»;
+- «Как это работает»;
+- «Написать в чат».
 
-Pattern:
-- title: what happened;
-- body: what it means or what to do;
-- action: concrete next step.
+Старайся делать ссылку короткой: до 5–6 слов.
 
-Avoid:
-- generic "Внимание";
-- emotional language;
-- technical internals unless user can act on them.
+## Лейблы и плейсхолдеры
 
-## Toggles
+Лейбл называет данные. Плейсхолдер помогает избежать ошибки или показывает пример.
 
-Purpose: turn a setting on or off.
+Правила:
 
-Pattern:
-- label names the setting, not the action: "Уведомления", "Автоплатеж";
-- helper text explains consequence if needed.
+- лейбл обычно существительное: «Номер телефона», «Комментарий», «Дата рождения»;
+- не начинай лейблы с «Введите», «Напишите», «Начните писать»;
+- не дублируй лейбл в плейсхолдере;
+- обязательную информацию не прячь только в плейсхолдер;
+- если поле необязательное, пиши «если есть».
 
-Avoid:
-- labels that change meaning between on and off;
-- double negatives.
+Примеры:
 
-## Legal Copy In UI
+- «Отчество, если есть»;
+- «Документы, если есть»;
+- «Комментарий»;
+- «Номер телефона».
 
-Purpose: meet legal or compliance constraints inside an interface.
+## Тогглы
 
-Pattern:
-- preserve legal meaning;
-- improve readability only when meaning stays intact;
-- mark risky edits as `needs legal review`.
+Текст тоггла должен одинаково хорошо читаться во включенном и выключенном состоянии.
 
-Avoid:
-- deleting conditions;
-- replacing legal terms with casual analogues;
-- applying style rules as hard bans.
+Правила:
 
-## Empty States
+- не используй отрицания;
+- не пиши «Включить…»;
+- не делай формулировку зависимой от положения переключателя;
+- лучше называй настройку или действие, которое включается.
 
-Purpose: explain why content is absent and what can happen next.
+Плохо:
 
-Pattern:
-- what is empty;
-- how to create, connect, retry, or wait if relevant.
+- «Не присылать уведомления»;
+- «Включить автоплатеж».
 
-Avoid:
-- jokes;
-- blaming the user;
-- empty optimism without action.
+Лучше:
 
-## Loading States
+- «Уведомления»;
+- «Автоплатеж».
 
-Purpose: reduce uncertainty while the user waits.
+## Тултипы и хинты
 
-Pattern:
-- describe the current operation if it matters;
-- give time estimate only when reliable.
+Тултипы и хинты читают реже, чем основной текст. Не прячь в них обязательную или критичную информацию.
 
-Avoid:
-- false precision;
-- long text that will flash briefly.
+Используй их только для дополнительного пояснения:
 
-## Code Entry Screen
+- что значит термин;
+- почему значение считается так;
+- откуда берутся данные;
+- что произойдет в редком случае.
 
-Purpose: help the user enter a verification code.
+Если без подсказки пользователь не завершит флоу, информация должна быть на экране.
 
-Pattern:
-- say where the code was sent;
-- keep resend and change-contact actions clear;
-- explain wait time for resend if known.
+## Алерты
 
-Avoid:
-- exposing security internals;
-- ambiguous "код подтверждения" without context when several codes may exist.
+Алерт нужен для важной информации: подтвердить действие, предупредить о последствиях или сообщить об ошибке.
+
+Структура:
+
+- заголовок: что произошло или что нужно подтвердить;
+- описание: что это значит;
+- действие: конкретный следующий шаг.
+
+Для критичного действия:
+
+- заголовок: «Точно удалить?»;
+- описание: последствие;
+- основная кнопка: «Да, удалить»;
+- вторичная кнопка: «Отмена».
+
+Кнопки в алерте должны различаться по смыслу.
+
+## Юридический текст внутри UI
+
+Меняй такой текст осторожно. Он должен сохранять смысл.
+
+Базовая структура:
+
+- «Нажимая “Название кнопки”, вы соглашаетесь с условиями».
+
+Если условий несколько, конкретизируй:
+
+- «Нажимая “Оплатить”, вы соглашаетесь с условиями передачи данных».
+
+Если правка может изменить смысл, пометь ее как `needs legal review`.
+
+## Пустые состояния
+
+Пустое состояние объясняет, почему контента нет, и что можно сделать дальше.
+
+Паттерн:
+
+- что пусто;
+- почему, если это полезно;
+- как создать, подключить, повторить или подождать.
+
+Избегай шуток, обвинения пользователя и пустого оптимизма без действия.
+
+## Загрузка
+
+Текст загрузки снижает неопределенность, пока пользователь ждет.
+
+Правила:
+
+- описывай операцию только если это важно;
+- давай срок только когда он надежен;
+- не пиши длинный текст, который мелькнет на долю секунды.
+
+## Экран ввода кода
+
+Правила:
+
+- скажи, куда отправлен код;
+- не раскрывай лишние детали безопасности;
+- отдельно покажи повторную отправку;
+- если повторная отправка доступна не сразу, покажи время ожидания.
