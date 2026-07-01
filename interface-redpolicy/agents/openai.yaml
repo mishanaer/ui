@@ -1,0 +1,4 @@
+interface:
+  display_name: "Interface Redpolicy"
+  short_description: "Russian interface text policy"
+  default_prompt: "Use $interface-redpolicy to draft or review Russian interface copy against the Ozon, Raiffeisen, and T-Bank inspired policy."

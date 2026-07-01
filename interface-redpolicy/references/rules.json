@@ -1,0 +1,72 @@
+{
+  "name": "interface-redpolicy",
+  "language": "ru",
+  "principles": [
+    "Text helps the user complete the current task",
+    "Remove text if the interface can explain itself",
+    "Make every screen understandable to a novice",
+    "Put the main fact or action first",
+    "Prefer concrete terms over abstract labels",
+    "Remove ambiguity around money, dates, commissions, subscriptions, personal data, and irreversible actions",
+    "Do not promise what the product cannot guarantee",
+    "Describe actions in execution order",
+    "Keep tone calm, respectful, neutral, and equal",
+    "Keep naming consistent across the product"
+  ],
+  "component_rules": {
+    "heading": [
+      "Carry the main meaning",
+      "Avoid empty headings such as 'Ошибка', 'Внимание', 'Информация'",
+      "Read clearly with the primary button"
+    ],
+    "button": [
+      "Use infinitive for actions",
+      "Use acknowledgement words for simple confirmation",
+      "Write as the user's command or reply"
+    ],
+    "link": [
+      "Explain the destination",
+      "Avoid standalone 'тут', 'здесь', 'подробнее'",
+      "Keep linked text short"
+    ],
+    "input": [
+      "Name the data, not the act of typing",
+      "Use hints for format, purpose, or consequence"
+    ],
+    "tooltip": [
+      "Use for optional context only",
+      "Do not hide critical information or core actions"
+    ],
+    "alert": [
+      "Explain event, importance, and next action",
+      "Use the actual problem instead of 'Внимание!'"
+    ],
+    "error": [
+      "Explain what happened",
+      "Explain how to recover",
+      "Do not blame the user"
+    ],
+    "empty_state": [
+      "Explain why the area is empty",
+      "Say what can happen next"
+    ]
+  },
+  "tone_avoid": [
+    "bureaucracy",
+    "empty_words",
+    "judging_feelings",
+    "fake_care",
+    "blame",
+    "excessive_joy",
+    "overacting",
+    "brand_self_praise",
+    "gendered_assumptions"
+  ],
+  "review_categories": [
+    "meaning",
+    "tone",
+    "component",
+    "risk",
+    "typography"
+  ]
+}
