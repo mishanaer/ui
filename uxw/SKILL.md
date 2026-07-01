@@ -1,6 +1,6 @@
 ---
 name: uxw
-description: UX writing for Russian interface microcopy. Use to draft, rewrite, review, lint, or localize Russian UI strings in product interfaces: i18n locale files such as ru.json/ru.yml, React/Vue/mobile/frontend strings, headings, buttons, links, alerts, errors, labels, placeholders, tooltips, hints, legal copy inside UI, empty states, loading states, code entry screens, dates, currencies, numbers, and short interface typography. Do not use as a generic Russian proofreader or for marketing, articles, PR, social media, API docs, brand strategy, or English-only UX writing.
+description: 'UX writing for Russian interface microcopy. Use to draft, rewrite, review, lint, or localize Russian UI strings in product interfaces: i18n locale files such as ru.json/ru.yml, React/Vue/mobile/frontend strings, headings, buttons, links, alerts, errors, labels, placeholders, tooltips, hints, legal copy inside UI, empty states, loading states, code entry screens, dates, currencies, numbers, and short interface typography. Do not use as a generic Russian proofreader or for marketing, articles, PR, social media, API docs, brand strategy, or English-only UX writing.'
 ---
 
 # UXW

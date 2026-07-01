@@ -1,0 +1,101 @@
+[
+  {
+    "name": "extract_json_nested_strings",
+    "script": "extract",
+    "args": ["evals/uxw/fixtures/problematic.ru.json", "--format", "json"],
+    "expected_exit": 0,
+    "expect_items": [
+      {
+        "key": "modal.title",
+        "value": "Ой! Что-то пошло не так.",
+        "component_guess": "heading"
+      },
+      {
+        "key": "modal.button.delete",
+        "value": "Хочу удалить.",
+        "component_guess": "button"
+      },
+      {
+        "key": "modal.link.details",
+        "value": "Подробнее здесь",
+        "component_guess": "link"
+      },
+      {
+        "key": "modal.field.phonePlaceholder",
+        "value": "Введите номер телефона",
+        "component_guess": "placeholder"
+      },
+      {
+        "key": "modal.legalAgreement",
+        "component_guess": "legal"
+      }
+    ]
+  },
+  {
+    "name": "extract_tsx_inline_strings",
+    "script": "extract",
+    "args": ["evals/uxw/fixtures/inline.tsx", "--format", "json"],
+    "expected_exit": 0,
+    "expect_values": [
+      "Важно.",
+      "К сожалению, не удалось загрузить данные",
+      "ОК",
+      "Подробнее здесь"
+    ]
+  },
+  {
+    "name": "lint_problematic_fixture_reports_expected_rules",
+    "script": "lint",
+    "args": ["evals/uxw/fixtures/problematic.ru.json", "--format", "json"],
+    "expected_exit": 1,
+    "expect_rules": [
+      "ui.tone.no_apologies",
+      "ui.tone.no_hype",
+      "ui.typography.no_exclamation",
+      "ui.button.no_i_want",
+      "ui.typography.no_period_in_short_button",
+      "ui.form.no_enter_write_start_typing",
+      "ui.link.meaningful_text",
+      "ui.typography.percent_no_space",
+      "ui.typography.currency_nbsp",
+      "ui.typography.technical_nonbreaking_hyphen"
+    ],
+    "expect_suggestions": {
+      "ui.button.no_i_want": "Удалить",
+      "ui.typography.percent_no_space": "Скидка 50%",
+      "ui.typography.currency_nbsp": "Итого 1 000 ₽",
+      "ui.typography.technical_nonbreaking_hyphen": "Введите QR‑код"
+    }
+  },
+  {
+    "name": "lint_single_button_component_filter",
+    "script": "lint",
+    "args": ["--text", "ОК", "--component", "button", "--format", "json"],
+    "expected_exit": 0,
+    "expect_rules": [
+      "ui.button.no_ok"
+    ],
+    "expect_suggestions": {
+      "ui.button.no_ok": "Понятно"
+    }
+  },
+  {
+    "name": "lint_clean_fixture_is_quiet",
+    "script": "lint",
+    "args": ["evals/uxw/fixtures/clean.ru.json", "--format", "json"],
+    "expected_exit": 0,
+    "expect_no_issues": true
+  },
+  {
+    "name": "reference_rules_cover_lintable_rule_ids",
+    "script": "rules",
+    "expected_rule_ids": [
+      "ui.tone.no_apologies",
+      "ui.tone.no_hype",
+      "ui.button.no_i_want",
+      "ui.form.no_enter_write_start_typing",
+      "ui.link.meaningful_text",
+      "ui.typography.percent_no_space"
+    ]
+  }
+]

@@ -11,6 +11,7 @@ Useful checks:
 ```sh
 python3 uxw/scripts/extract_ui_strings.py src/locales/ru.json --format json
 python3 uxw/scripts/ui_text_lint.py src/locales/ru.json
+python3 evals/uxw/run.py
 ```
 
 ## sber-tma
